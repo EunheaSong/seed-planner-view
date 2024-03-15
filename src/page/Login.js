@@ -1,7 +1,6 @@
 import React from 'react';
 // import center from '/style'
 import {Button, Center, Input} from '../style/StyleComponet';
-const check = "";
 
 const Login = () => {
     return (
@@ -21,8 +20,5 @@ const Login = () => {
         </Center>
     );
 };
-
-console.log()
-
 
 export default Login;
