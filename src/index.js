@@ -7,12 +7,14 @@ import Footer from './layout/Footer';
 
 import reportWebVitals from './reportWebVitals';
 import Login from "./page/Login";
+import CreateMember from "./component/CreateMember";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
       <Header />
-      <Login />
+      <CreateMember />
+      {/*<Login />*/}
       <Footer />
   </React.StrictMode>
 );
