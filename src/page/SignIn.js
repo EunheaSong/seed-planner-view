@@ -4,21 +4,21 @@ import { LoginContainer, LoginBox } from '../style/member/LoginStyle';
 // import { actionCreators as userActions } from "../redux/modules/user";
 // import { history } from "../redux/configureStore";
 // import Kakao from "../src_assets/kakao.png"
-import { auth } from '../api/member/auth';
+import { login } from '../api/member/auth';
+import { useNavigate } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 export default function CreateMember() {
-    // const dispatch = useDispatch();
-
     const [email, setId] = useState("");
     const [password, setPwd] = useState("");
-    // const info = {
-    //     email : email,
-    //     password: password
-    // }
-
-    const handleLogin = () => {
-        auth(email, password)
+    const navigate = useNavigate();
+    const moveSignUp = () => {
+        navigate('/sign-up');
     }
+    const handleLogin = () => {
+        login(email, password)
+    }
+
     return (
         <React.Fragment>
             <LoginContainer>
@@ -66,12 +66,10 @@ export default function CreateMember() {
                         {/*/>*/}
                         <button
                             id="signupbtn"
-                            onClick={() => {
-                                // history.push("/SignUp");
-                            }}
+                            onClick={moveSignUp}
                             type="button"
                         >
-                            간편 회원가입
+                            회원가입
                         </button>
                     </center>
                 </form>
