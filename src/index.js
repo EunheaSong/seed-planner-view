@@ -2,20 +2,13 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import Header from './layout/Header';
-import Footer from './layout/Footer';
 
 import reportWebVitals from './reportWebVitals';
-import Login from "./page/Login";
-import CreateMember from "./component/CreateMember";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-      <Header />
-      <CreateMember />
-      {/*<Login />*/}
-      <Footer />
+      <App />
   </React.StrictMode>
 );
 
