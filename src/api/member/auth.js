@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { setToken } from "../Token";
+import {setToken} from "../Token";
 // import axiosInstance from "../axios";
 
 export const login = (email, password) => {
@@ -12,13 +12,12 @@ export const login = (email, password) => {
             const token = response.headers.getAuthorization()
             console.log(token)
             setToken(token)
-            console.log("성공인가?")
+            console.log("로그인 성공")
         }).catch(error => {
         // 오류발생시 실행
-        console.log("오류인가?")
+        console.log("로그인 오류")
     }).then(() => {
         // 항상 실행
-        console.log("항상 실행이건 뭔가? 여긴 뭘 해주면 좋을꼬?")
     });
 }
 
@@ -29,16 +28,11 @@ export const signUp = (props) => {
         rePassword: props.rePassword
     })
         .then(response => {
-            // response
-            // const token = response.headers.getAuthorization()
-            // console.log(token)
-            // setToken(token)
-            console.log("성공인가?")
+            console.log("회원 가입 성공")
         }).catch(error => {
         // 오류발생시 실행
-        console.log("오류인가?")
+        console.log("회원 가입 오류")
     }).then(() => {
         // 항상 실행
-        console.log("항상 실행이건 뭔가? 여긴 뭘 해주면 좋을꼬?")
     });
 }
