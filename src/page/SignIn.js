@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { LoginContainer, LoginBox } from '../style/member/LoginStyle';
+import { LoginContainer, LoginBox } from '../style/member/SignStyle';
 // import { useDispatch } from "react-redux";
 // import { actionCreators as userActions } from "../redux/modules/user";
 // import { history } from "../redux/configureStore";

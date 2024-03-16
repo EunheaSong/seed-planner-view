@@ -1,4 +1,4 @@
-import {SignUpBox} from "../style/member/LoginStyle";
+import {SignUpBox} from "../style/member/SignStyle";
 import {useState} from "react";
 import {signUp} from "../api/member/auth";
 
