@@ -1,10 +1,9 @@
-import {SignUpBox} from "../style/member/SignStyle";
-import {useState} from "react";
-import {signUp} from "../api/member/auth";
-
+import { SignUpBox } from "../style/member/SignStyle";
+import { useState } from "react";
+import { actionCreators as userActions } from "../api/member/auth";
+import { useNavigate } from "react-router-dom";
 
 export default function SignUp() {
-
     const [formData, setFormData] = useState({
         email: '',
         password: '',
@@ -17,11 +16,17 @@ export default function SignUp() {
         setFormData({...formData, [name]: value});
     };
 
+    const navigate = useNavigate();
+
     // 폼 제출 핸들러
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
-        console.log(formData.email);
-        signUp(formData);
+        try {
+            await userActions.signUp(formData);
+            navigate('/');
+        } catch (e) {
+            alert("다시!")
+        }
     }
 
     return (
