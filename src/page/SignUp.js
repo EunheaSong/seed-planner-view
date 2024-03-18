@@ -2,8 +2,6 @@ import {SignUpBox} from "../style/member/SignStyle";
 import {useState} from "react";
 import {actionCreators as userActions} from "../api/member/auth";
 import {useNavigate} from "react-router-dom";
-import data from "bootstrap/js/src/dom/data";
-import collapse from "bootstrap/js/src/collapse";
 
 export default function SignUp() {
     const [formData, setFormData] = useState({
