@@ -53,7 +53,6 @@ export default function SignUp() {
     }
 
     const rePasswordHandleBlur = () => {
-        console.log("?")
         setIsValidRePassword(formData.password === formData.rePassword);
     }
 
@@ -66,7 +65,6 @@ export default function SignUp() {
         if (formData.email === "" || formData.password === "" || formData.rePassword === "") {
             alert("모든 정보를 입력해주세요 :)")
         } else if (!isDuplicationEmail && isValidEmail && isValidPassword && isValidPassword) {
-            console.log("요청 ?")
             await userActions.signUp(formData);
             navigate('/');
         } else {

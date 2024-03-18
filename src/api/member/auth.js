@@ -23,8 +23,6 @@ export const login = (email, password) => {
 }
 
 const signUp = async (props) => {
-    console.log("왜 요청을 안해?")
-    console.log("왜 요청을 안해? 왜?")
     await axios.post('http://localhost:8080/member/sign-up', {
         email: props.email,
         password: props.password,
