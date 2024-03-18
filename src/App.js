@@ -6,6 +6,7 @@ import SignIn from "./page/SignIn";
 import React from "react";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
+import Main from "./page/Main";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
             <Routes>
                 <Route path={"/"} element={<SignIn />}></Route>
                 <Route path={"/sign-up"} element={<SignUp />}></Route>
+                <Route path={"/main"} element={<Main />}></Route>
             </Routes>
         </BrowserRouter>
         <Footer />
