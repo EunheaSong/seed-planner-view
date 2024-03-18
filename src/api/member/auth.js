@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { setToken } from "../Token";
+import {useNavigate} from "react-router-dom";
 // import axiosInstance from "../axios";
 
 export const login = (email, password) => {
@@ -21,23 +22,37 @@ export const login = (email, password) => {
     });
 }
 
-const signUp = (props) => {
-    return axios.post('http://localhost:8080/member/sign-up', {
-            email: props.email,
-            password: props.password,
-            rePassword: props.rePassword
-        })
-            .then(response => {
-                console.log("회원 가입 성공")
-                return response.data; // 예시로 응답 데이터 반환
-            }).catch(error => {
+const signUp = async (props) => {
+    console.log("왜 요청을 안해?")
+    console.log("왜 요청을 안해? 왜?")
+    await axios.post('http://localhost:8080/member/sign-up', {
+        email: props.email,
+        password: props.password,
+        rePassword: props.rePassword
+    })
+        .then(response => {
+            console.log("회원 가입 성공")
+            return response.data;
+        }).catch(error => {
+        // 오류발생시 실행
+        console.error("회원 가입 오류" + error)
+    })
+}
+
+const duplicationEmail = (email) => {
+    return axios.get(`http://localhost:8080/member/exist?email=${email}`)
+        .then(response => {
+            console.log("이메일 중복 확인 성공")
+            return Promise.resolve(response.data); // 예시로 응답 데이터 반환
+        }).catch(error => {
             // 오류발생시 실행
-            console.error("회원 가입 오류")
-            return Promise.reject(error);
+            console.error("이메일 중복 오류" + error)
         })
 }
 
+
 export const actionCreators = {
     login,
-    signUp
+    signUp,
+    duplicationEmail
 };
