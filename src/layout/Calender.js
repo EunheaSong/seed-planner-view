@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../style/Calender.css";
+import "../style/main/Calender.css";
 
 //TODO : 공휴일 데이터 가져오기
 
@@ -29,7 +29,9 @@ export default function Calendar() {
     daysInMonth.push(new Date(day).getDate());
     day.setDate(day.getDate() + 1);
   }
-
+  for (let i = lastDayOfMonth.getDay(); i < 6; i++) {
+    daysInMonth.push("");
+  }
   // 배열을 크기별로 나누는 함수
   function chunkArray() {
     const chunkedArray = [];
@@ -43,13 +45,13 @@ export default function Calendar() {
   return (
     <div className="container">
       <div className="calendar">
-        <p>
+        <div>
           <button>{` < `}</button>
           <span role="button" onClick={() => alert("yayayayay")}>
             {`${selectDay.getFullYear()}년 ${selectDay.getMonth() + 1}월`}
           </span>
           <button>{` > `}</button>
-        </p>
+        </div>
         <table>
           <thead>
             <tr>
@@ -86,6 +88,7 @@ function Day({ date }) {
   return (
     <td key={date}>
       <div
+        className="day-box"
         role="button"
         // onMouseOver={}
         onClick={() => alert("tttt")}
