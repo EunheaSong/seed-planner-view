@@ -24,7 +24,7 @@ const Header = () => {
           </a>
         </nav>
       </div>
-      <div>
+      <div className="header-right">
         <div>프로필</div>
       </div>
     </div>

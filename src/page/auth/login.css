@@ -1,0 +1,83 @@
+.login-modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.login-modal {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  padding: 40px 36px 32px 36px;
+  min-width: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-title {
+  color: #4caf50;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.login-input {
+  width: 240px;
+  height: 40px;
+  border: 1.5px solid #f0f0f0;
+  border-radius: 10px;
+  margin-bottom: 18px;
+  padding: 0 16px;
+  font-size: 1rem;
+  outline: none;
+  background: #fafafa;
+  transition: border 0.2s;
+}
+
+.login-input:focus {
+  border: 1.5px solid #b2dfdb;
+}
+
+.login-btn {
+  width: 140px;
+  height: 40px;
+  background: #e0f8e0;
+  color: #4caf50;
+  font-size: 1.2rem;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(76, 175, 80, 0.08);
+  cursor: pointer;
+  margin: 20px auto;
+  display: block;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+.login-btn:hover {
+  background: #c8f7c5;
+  box-shadow: 0 6px 16px rgba(76, 175, 80, 0.12);
+}

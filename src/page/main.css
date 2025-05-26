@@ -1,0 +1,4 @@
+.main-container {
+  height: calc(100vh - 61px);
+  padding-top: 60px; /* 추가 */
+}
